@@ -21,6 +21,9 @@ def load_training_data(filename):
 
             diff_indices = np.where(game_state_flat != optimal_move_flat)[0]
 
+            if len(diff_indices) != 1:
+                continue
+
             move_index = diff_indices[0]
             game_states.append(game_state_flat)
             optimal_moves.append(move_index)
